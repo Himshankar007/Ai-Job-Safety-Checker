@@ -64,10 +64,11 @@ const InterviewAI = () => {
     };
 
     return (
-        <div className="pt-32 pb-20 px-6 max-w-4xl mx-auto min-h-screen text-white">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
-                <h1 className="text-4xl font-bold mb-4">AI Interview <span className="text-primary">Assistant</span></h1>
-                <p className="text-gray-400">Master your technical interviews with our real-time AI simulator.</p>
+        <div className="max-w-7xl mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
+                <div className="text-sm text-muted font-semibold">Interview AI</div>
+                <h1 className="text-3xl md:text-4xl font-black mt-1">AI Interview <span className="gradient-text">Assistant</span></h1>
+                <p className="text-muted mt-2">Practice role-based interview questions and get feedback.</p>
             </motion.div>
 
             <AnimatePresence mode="wait">

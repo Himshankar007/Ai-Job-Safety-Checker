@@ -42,10 +42,11 @@ const SkillGap = () => {
     };
 
     return (
-        <div className="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-screen text-white">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-                <h1 className="text-4xl font-bold mb-4">Skill Gap <span className="text-primary">Analyzer</span></h1>
-                <p className="text-gray-400">Bridge the gap between your expertise and your dream job requirements.</p>
+        <div className="max-w-7xl mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
+                <div className="text-sm text-muted font-semibold">Skill Gap</div>
+                <h1 className="text-3xl md:text-4xl font-black mt-1">Skill Gap <span className="gradient-text">Analyzer</span></h1>
+                <p className="text-muted mt-2">Add your skills and paste a job description to see what’s missing.</p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-10">

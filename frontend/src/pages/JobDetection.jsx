@@ -33,14 +33,15 @@ const JobDetection = () => {
     };
 
     return (
-        <div className="pt-32 pb-20 px-6 max-w-5xl mx-auto min-h-screen text-white">
+        <div className="max-w-7xl mx-auto">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center mb-12"
+                className="mb-8"
             >
-                <h1 className="text-4xl font-bold mb-4">Job Fraud <span className="text-primary">Detection</span></h1>
-                <p className="text-gray-400">Paste a job description or upload an image/file to verify its authenticity.</p>
+                <div className="text-sm text-muted font-semibold">Fraud Detection</div>
+                <h1 className="text-3xl md:text-4xl font-black mt-1">Job Fraud <span className="gradient-text">Analysis</span></h1>
+                <p className="text-muted mt-2">Paste a job description or upload an image/PDF. Get a risk level and flags.</p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-8">
@@ -51,7 +52,7 @@ const JobDetection = () => {
                     className="flex flex-col gap-6"
                 >
                     <div className="glass p-6">
-                        <label className="block text-sm font-medium mb-2 text-gray-300">Job Description Content</label>
+                        <label className="block text-sm font-semibold mb-2 text-muted">Job description</label>
                         <textarea
                             className="w-full h-64 bg-black/30 border border-white/10 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none text-sm transition-all"
                             placeholder="Paste the job description or details here..."
@@ -61,7 +62,7 @@ const JobDetection = () => {
                     </div>
 
                     <div className="glass p-6">
-                        <label className="block text-sm font-medium mb-4 text-gray-300">Or Upload Image / PDF (OCR Scan)</label>
+                        <label className="block text-sm font-semibold mb-4 text-muted">Upload image / PDF (OCR)</label>
                         <div className="border-2 border-dashed border-white/10 rounded-xl p-8 flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors cursor-pointer group">
                             <Upload className="w-10 h-10 text-gray-500 group-hover:text-primary" />
                             <p className="text-sm text-gray-400">Click to browse or drag & drop files</p>
@@ -79,7 +80,7 @@ const JobDetection = () => {
                     <button
                         disabled={(!description && !file) || loading}
                         onClick={handleAnalyze}
-                        className="w-full py-4 bg-primary hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20"
+                        className="w-full py-4 bg-primary hover:opacity-95 disabled:opacity-50 disabled:cursor-not-allowed rounded-2xl font-extrabold flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20"
                     >
                         {loading ? <Loader2 className="animate-spin" /> : <Search className="w-5 h-5" />}
                         {loading ? "Analyzing Patterns..." : "Verify Job Authenticity"}

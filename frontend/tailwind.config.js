@@ -7,14 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Classic white / sand / brown palette
-        primary: "#8B5E34", // cocoa brown
-        secondary: "#C7A17A", // sand
-        background: "#FAF4E8", // warm off-white
-        surface: "#FFFFFF",
-        ink: "#2B1B12",
-        muted: "#6B5A4A",
-        accent: "#B45F06", // warm amber-brown
+        // Corona-style dark admin palette
+        background: "#0f1015",
+        surface: "#191c24",
+        card: "#1e222d",
+        stroke: "rgba(255,255,255,0.08)",
+        ink: "#e5e7eb",
+        muted: "#9ca3af",
+        primary: "#b66dff",
+        secondary: "#ff2c6d",
+        accent: "#00d25b",
       },
       backdropBlur: {
         xs: '2px',

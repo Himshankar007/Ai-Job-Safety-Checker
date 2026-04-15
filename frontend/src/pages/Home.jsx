@@ -3,142 +3,182 @@ import { motion } from 'framer-motion';
 import { ShieldAlert, FileSearch, Building2, BrainCircuit, MessageSquare, Zap } from 'lucide-react';
 import { Link } from "react-router-dom";
 
-const FeatureCard = ({ icon: Icon, title, description }) => (
+const StatCard = ({ title, value, delta, deltaPositive }) => (
     <motion.div
-        whileHover={{ y: -10 }}
-        className="glass p-7 flex flex-col gap-4 group transition-all hover:shadow-2xl hover:shadow-primary/10"
+        whileHover={{ y: -6 }}
+        className="glass p-6 border border-stroke rounded-2xl"
     >
-        <div className="w-12 h-12 rounded-xl bg-secondary/35 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-            <Icon className="w-6 h-6" />
+        <div className="text-xs uppercase tracking-[0.18em] text-muted font-semibold">{title}</div>
+        <div className="mt-2 flex items-end justify-between">
+            <div className="text-3xl font-black text-ink">{value}</div>
+            <div className={`text-sm font-extrabold ${deltaPositive ? "text-accent" : "text-secondary"}`}>{delta}</div>
         </div>
-        <h3 className="text-xl font-extrabold text-ink">{title}</h3>
-        <p className="text-muted leading-relaxed text-sm">{description}</p>
+    </motion.div>
+);
+
+const ToolCard = ({ icon: Icon, title, description, to, cta }) => (
+    <motion.div whileHover={{ y: -6 }} className="glass p-6 border border-stroke rounded-2xl">
+        <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-primary/15 border border-primary/25 flex items-center justify-center text-primary">
+                <Icon className="w-6 h-6" />
+            </div>
+            <div className="flex-1">
+                <div className="text-lg font-black text-ink">{title}</div>
+                <div className="text-sm text-muted mt-1 leading-relaxed">{description}</div>
+                <div className="mt-4">
+                    <Link to={to} className="inline-flex items-center gap-2 text-sm font-extrabold text-primary hover:text-secondary transition">
+                        {cta} <span aria-hidden>→</span>
+                    </Link>
+                </div>
+            </div>
+        </div>
     </motion.div>
 );
 
 const Home = () => {
-    const features = [
-        {
-            icon: ShieldAlert,
-            title: "Fraud Detection",
-            description: "AI-powered analysis to identify fake job postings with high accuracy using NLP and pattern matching."
-        },
-        {
-            icon: FileSearch,
-            title: "ATS Optimizer",
-            description: "Analyze your resume against job descriptions to optimize keywords and improve your hiring chances."
-        },
-        {
-            icon: Building2,
-            title: "Company Analytics",
-            description: "Deep dive into company reputation, work culture, and credibility scores before you apply."
-        },
-        {
-            icon: BrainCircuit,
-            title: "Skill Gap Analysis",
-            description: "Identify missing skills and get personalized course recommendations to bridge the gap."
-        },
-        {
-            icon: MessageSquare,
-            title: "Mock Interviews",
-            description: "Practice with our AI interview assistant tailored to regular job roles and real-world scenarios."
-        },
-        {
-            icon: Zap,
-            title: "Real-time Alerts",
-            description: "Get instant notifications about potential scams and industry-specific fraud trends."
-        }
-    ];
-
     return (
-        <div className="pt-24 min-h-screen text-ink">
-            {/* Hero Section */}
-            <section className="px-6 py-16 md:py-20 max-w-7xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="flex flex-col items-start text-left">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 text-sm font-semibold text-muted"
-                >
-                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                    Trusted job safety checks, in minutes
-                </motion.div>
-
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-5xl md:text-6xl font-black mb-5 leading-[1.05] tracking-tight"
-                >
-                    Protect your career from scams.
-                    <br />
-                    <span className="gradient-text">Verify jobs instantly.</span>
-                </motion.h1>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-muted text-lg md:text-xl max-w-xl mb-8"
-                >
-                    A clean, easy-to-use toolkit that helps you detect fraud, optimize your resume, and prepare for interviews — with clarity and confidence.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="flex flex-wrap gap-4"
-                >
-                    <Link to="/detect" className="px-7 py-4 bg-primary text-white rounded-2xl font-extrabold shadow-xl shadow-primary/15 hover:scale-[1.02] transition-all">
-                        Check a Job Posting
+        <div className="max-w-7xl mx-auto">
+            <div className="flex items-start justify-between gap-6 flex-wrap">
+                <div>
+                    <div className="text-sm text-muted font-semibold">Dashboard</div>
+                    <h1 className="text-3xl md:text-4xl font-black mt-1">
+                        Welcome back, <span className="gradient-text">job seeker</span>
+                    </h1>
+                    <p className="text-muted mt-2 max-w-2xl">
+                        Verify job posts, improve your resume, and research companies — all in one place.
+                    </p>
+                </div>
+                <div className="flex gap-3">
+                    <Link to="/detect" className="px-5 py-3 rounded-2xl bg-primary text-white font-extrabold shadow-lg shadow-primary/20 hover:opacity-95 transition">
+                        New Job Check
                     </Link>
-                    <Link to="/ats" className="px-7 py-4 glass rounded-2xl font-extrabold hover:bg-white/70 transition-all border border-primary/10">
-                        Improve My Resume (ATS)
+                    <Link to="/ats" className="px-5 py-3 rounded-2xl bg-white/5 border border-stroke text-ink font-extrabold hover:bg-white/10 transition">
+                        Resume ATS
                     </Link>
-                </motion.div>
+                </div>
+            </div>
 
-                        <div className="mt-8 flex flex-wrap gap-3">
-                            {["OCR scan for posters", "PDF resume analysis", "Company credibility check"].map((t) => (
-                                <span key={t} className="text-xs font-extrabold tracking-wide text-primary bg-secondary/35 border border-primary/10 px-3 py-2 rounded-full">
-                                    {t}
-                                </span>
-                            ))}
+            {/* Stat row (Corona-like) */}
+            <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <StatCard title="Potential Risk Reduced" value="28%" delta="+3.5%" deltaPositive />
+                <StatCard title="Checks This Week" value="17" delta="+11%" deltaPositive />
+                <StatCard title="Resume Match Avg." value="72%" delta="-2.4%" />
+                <StatCard title="Skill Gaps Found" value="31" delta="+3.5%" deltaPositive />
+            </div>
+
+            {/* Main grid */}
+            <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-2 space-y-6">
+                    <div className="glass border border-stroke rounded-2xl overflow-hidden">
+                        <div className="px-6 py-5 border-b border-stroke flex items-center justify-between">
+                            <div>
+                                <div className="text-lg font-black">Quick Start</div>
+                                <div className="text-sm text-muted">Pick a tool and get results in minutes.</div>
+                            </div>
+                            <div className="text-xs uppercase tracking-[0.2em] text-muted font-semibold">SafeJob AI</div>
+                        </div>
+                        <div className="p-6 grid md:grid-cols-2 gap-4">
+                            <ToolCard
+                                icon={ShieldAlert}
+                                title="Fraud Detection"
+                                description="Paste a job description or upload a poster. Get a risk level and red flags."
+                                to="/detect"
+                                cta="Analyze a job"
+                            />
+                            <ToolCard
+                                icon={FileSearch}
+                                title="Resume ATS"
+                                description="Upload your resume and compare it with a job description for an ATS score."
+                                to="/ats"
+                                cta="Improve my resume"
+                            />
+                            <ToolCard
+                                icon={Building2}
+                                title="Company Analysis"
+                                description="Check credibility, culture and salary insight before applying."
+                                to="/company"
+                                cta="Analyze a company"
+                            />
+                            <ToolCard
+                                icon={BrainCircuit}
+                                title="Skill Gap"
+                                description="Find missing skills and get recommendations to close the gap faster."
+                                to="/skills"
+                                cta="Find skill gaps"
+                            />
                         </div>
                     </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.15 }}
-                        className="glass rounded-3xl border border-primary/10 overflow-hidden"
-                    >
-                        <img
-                            src="/hero-illustration.svg"
-                            alt="SafeJob AI dashboard preview"
-                            className="w-full h-auto block"
-                            loading="eager"
-                        />
-                    </motion.div>
+                    <div className="glass border border-stroke rounded-2xl overflow-hidden">
+                        <div className="px-6 py-5 border-b border-stroke">
+                            <div className="text-lg font-black">Recent Activity</div>
+                            <div className="text-sm text-muted">A simple history of your latest checks.</div>
+                        </div>
+                        <div className="p-6">
+                            <div className="space-y-3">
+                                {[
+                                    { t: "Fraud Detection", d: "Scanned job poster (OCR)", when: "15 minutes ago", tag: "High risk", color: "text-secondary" },
+                                    { t: "Resume ATS", d: "Matched resume to JD", when: "1 hour ago", tag: "72% match", color: "text-accent" },
+                                    { t: "Company Analysis", d: "Checked company credibility", when: "4 hours ago", tag: "Recommended", color: "text-primary" },
+                                ].map((row, i) => (
+                                    <div key={i} className="flex items-center justify-between gap-4 bg-white/5 border border-stroke rounded-2xl p-4">
+                                        <div>
+                                            <div className="font-extrabold">{row.t}</div>
+                                            <div className="text-sm text-muted">{row.d}</div>
+                                        </div>
+                                        <div className="text-right">
+                                            <div className={`text-sm font-extrabold ${row.color}`}>{row.tag}</div>
+                                            <div className="text-xs text-muted">{row.when}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            {/* Features Grid */}
-            <section className="px-6 py-20">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-black mb-4">Everything you need to stay <span className="text-primary">safe</span></h2>
-                        <p className="text-muted max-w-2xl mx-auto">Simple tools, clear results — designed to help job seekers make confident decisions.</p>
+                <div className="space-y-6">
+                    <div className="glass border border-stroke rounded-2xl overflow-hidden">
+                        <div className="px-6 py-5 border-b border-stroke">
+                            <div className="text-lg font-black">Interview AI</div>
+                            <div className="text-sm text-muted">Practice live with AI questions.</div>
+                        </div>
+                        <div className="p-6">
+                            <p className="text-sm text-muted leading-relaxed">
+                                Pick a role and start a mock interview. If your backend maintenance mode is enabled, you may see a maintenance notice.
+                            </p>
+                            <Link to="/interview" className="mt-4 inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-secondary text-white font-extrabold hover:opacity-95 transition">
+                                Start Interview
+                            </Link>
+                        </div>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {features.map((feature, idx) => (
-                            <FeatureCard key={idx} {...feature} />
-                        ))}
+
+                    <div className="glass border border-stroke rounded-2xl overflow-hidden">
+                        <div className="px-6 py-5 border-b border-stroke">
+                            <div className="text-lg font-black">Safety Tips</div>
+                            <div className="text-sm text-muted">Quick reminders to avoid scams.</div>
+                        </div>
+                        <div className="p-6 space-y-3 text-sm text-muted">
+                            <div className="flex gap-3">
+                                <div className="w-2 h-2 rounded-full bg-accent mt-2" />
+                                Never pay “registration fees” for a job.
+                            </div>
+                            <div className="flex gap-3">
+                                <div className="w-2 h-2 rounded-full bg-primary mt-2" />
+                                Prefer official company email domains.
+                            </div>
+                            <div className="flex gap-3">
+                                <div className="w-2 h-2 rounded-full bg-secondary mt-2" />
+                                If it sounds too good to be true, verify first.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="text-center text-[11px] uppercase tracking-[0.22em] text-muted">
+                        © 2026 SafeJob AI
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     );
 };

@@ -27,17 +27,18 @@ const CompanyAnalysis = () => {
     };
 
     return (
-        <div className="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-screen text-white">
+        <div className="max-w-7xl mx-auto">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center mb-12"
+                className="mb-8"
             >
-                <h1 className="text-4xl font-bold mb-4">Company <span className="text-primary">Review Analyzer</span></h1>
-                <p className="text-gray-400">Get deep insights into any company before you commit to an interview.</p>
+                <div className="text-sm text-muted font-semibold">Company Analysis</div>
+                <h1 className="text-3xl md:text-4xl font-black mt-1">Company <span className="gradient-text">Intelligence</span></h1>
+                <p className="text-muted mt-2">Get credibility and culture insight before you commit to an interview.</p>
             </motion.div>
 
-            <div className="max-w-3xl mx-auto mb-16 px-4">
+            <div className="max-w-3xl mx-auto mb-10 px-4">
                 <div className="relative group">
                     <input
                         type="text"

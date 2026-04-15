@@ -33,14 +33,15 @@ const ResumeATS = () => {
     };
 
     return (
-        <div className="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-screen text-white">
+        <div className="max-w-7xl mx-auto">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center mb-12"
+                className="mb-8"
             >
-                <h1 className="text-4xl font-bold mb-4">Resume <span className="text-primary">ATS Optimizer</span></h1>
-                <p className="text-gray-400">Scan your resume against any job description to see how well you match.</p>
+                <div className="text-sm text-muted font-semibold">Resume ATS</div>
+                <h1 className="text-3xl md:text-4xl font-black mt-1">Resume <span className="gradient-text">ATS Optimizer</span></h1>
+                <p className="text-muted mt-2">Upload your resume and compare it against a job description for an ATS-style score.</p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-10">
@@ -76,7 +77,7 @@ const ResumeATS = () => {
                     <button
                         disabled={!jobDesc || !resume || loading}
                         onClick={handleAnalyze}
-                        className="w-full py-4 bg-primary hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
+                        className="w-full py-4 bg-primary hover:opacity-95 disabled:opacity-50 disabled:cursor-not-allowed rounded-2xl font-extrabold flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20"
                     >
                         {loading ? <Loader2 className="animate-spin" /> : <Sparkles className="w-5 h-5" />}
                         {loading ? "Matching Skills..." : "Analyze Compatibility Score"}
