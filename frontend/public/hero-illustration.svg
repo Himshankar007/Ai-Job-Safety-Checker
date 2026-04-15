@@ -1,0 +1,63 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9EF"/>
+      <stop offset="1" stop-color="#FAF4E8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="250" y1="120" x2="980" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5E34" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#B45F06" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#C7A17A" stop-opacity="0.75"/>
+    </linearGradient>
+    <filter id="shadow" x="-50" y="-50" width="1300" height="800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#2B1B12" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="700" rx="40" fill="url(#bg)"/>
+
+  <!-- Decorative blobs -->
+  <path d="M245 190C245 120 300 70 370 70H420C490 70 545 120 545 190C545 260 490 310 420 310H370C300 310 245 260 245 190Z" fill="#C7A17A" fill-opacity="0.35"/>
+  <path d="M820 160C820 92 876 40 946 40H1000C1070 40 1126 92 1126 160C1126 228 1070 280 1000 280H946C876 280 820 228 820 160Z" fill="#B45F06" fill-opacity="0.18"/>
+  <path d="M110 520C110 440 175 380 255 380H340C420 380 485 440 485 520C485 600 420 660 340 660H255C175 660 110 600 110 520Z" fill="#8B5E34" fill-opacity="0.14"/>
+
+  <!-- Card -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="140" width="850" height="440" rx="28" fill="white" fill-opacity="0.86"/>
+    <rect x="175" y="140" width="850" height="440" rx="28" stroke="#8B5E34" stroke-opacity="0.14"/>
+
+    <!-- Header -->
+    <rect x="220" y="185" width="320" height="22" rx="11" fill="#8B5E34" fill-opacity="0.14"/>
+    <rect x="220" y="220" width="460" height="46" rx="12" fill="url(#accent)" fill-opacity="0.18"/>
+
+    <!-- Chart -->
+    <rect x="220" y="290" width="520" height="250" rx="18" fill="#FAF4E8"/>
+    <path d="M255 505C322 460 340 450 400 420C460 390 470 410 525 380C580 350 610 360 675 320" stroke="#8B5E34" stroke-width="10" stroke-linecap="round"/>
+    <path d="M255 505C322 460 340 450 400 420C460 390 470 410 525 380C580 350 610 360 675 320" stroke="#C7A17A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="255" cy="505" r="8" fill="#B45F06"/>
+    <circle cx="400" cy="420" r="8" fill="#B45F06"/>
+    <circle cx="525" cy="380" r="8" fill="#B45F06"/>
+    <circle cx="675" cy="320" r="8" fill="#B45F06"/>
+
+    <!-- Side stats -->
+    <rect x="765" y="290" width="215" height="74" rx="16" fill="#FAF4E8"/>
+    <rect x="785" y="312" width="110" height="12" rx="6" fill="#6B5A4A" fill-opacity="0.35"/>
+    <rect x="785" y="336" width="170" height="14" rx="7" fill="#8B5E34" fill-opacity="0.22"/>
+
+    <rect x="765" y="382" width="215" height="74" rx="16" fill="#FAF4E8"/>
+    <rect x="785" y="404" width="140" height="12" rx="6" fill="#6B5A4A" fill-opacity="0.35"/>
+    <rect x="785" y="428" width="150" height="14" rx="7" fill="#B45F06" fill-opacity="0.18"/>
+
+    <rect x="765" y="474" width="215" height="66" rx="16" fill="#FAF4E8"/>
+    <rect x="785" y="496" width="120" height="12" rx="6" fill="#6B5A4A" fill-opacity="0.35"/>
+    <rect x="785" y="520" width="165" height="12" rx="6" fill="#C7A17A" fill-opacity="0.5"/>
+  </g>
+
+  <!-- Badge -->
+  <g>
+    <rect x="880" y="96" width="210" height="54" rx="16" fill="white" fill-opacity="0.82"/>
+    <rect x="880" y="96" width="210" height="54" rx="16" stroke="#8B5E34" stroke-opacity="0.14"/>
+    <circle cx="910" cy="123" r="10" fill="#B45F06" fill-opacity="0.85"/>
+    <rect x="930" y="112" width="135" height="22" rx="11" fill="#8B5E34" fill-opacity="0.16"/>
+  </g>
+</svg>

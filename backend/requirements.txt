@@ -1,0 +1,22 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+python-dotenv
+aiofiles
+
+# PDF & OCR
+pdfplumber
+pytesseract
+pillow
+
+# ML Core (used by `ml_utils.py`)
+scikit-learn
+numpy
+
+# LLM - Google Gemini
+google-generativeai
+
+# NOTE:
+# If you later want advanced NLP/Deep Learning features, create a separate
+# `requirements-full.txt` and install that only when needed.
