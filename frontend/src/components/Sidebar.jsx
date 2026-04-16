@@ -38,12 +38,12 @@ export default function Sidebar({ open, onClose }) {
         <div className="h-full glass border border-stroke rounded-2xl overflow-hidden">
           <div className="h-[70px] px-5 flex items-center justify-between border-b border-stroke">
             <div className="text-lg font-black tracking-tight">
-              <span className="text-ink">SafeJob</span>{" "}
-              <span className="text-primary">AI</span>
+              <span className="text-ink">AI Job Safety </span>{" "}
+              <span className="text-primary">Checker</span>
             </div>
             <button
               onClick={onClose}
-              className="md:hidden p-2 rounded-xl bg-white/5 border border-stroke hover:bg-white/10 transition"
+              className="md:hidden p-2 rounded-xl bg-black/5 border border-stroke hover:bg-black/10 transition"
               aria-label="Close navigation"
             >
               <X className="w-4 h-4" />
@@ -66,7 +66,7 @@ export default function Sidebar({ open, onClose }) {
                         "flex items-center gap-3 px-3 py-2.5 rounded-xl border transition",
                         isActive
                           ? "bg-primary/15 border-primary/30 text-ink"
-                          : "bg-white/0 border-transparent text-muted hover:bg-white/5 hover:border-stroke",
+                          : "bg-transparent border-transparent text-muted hover:bg-black/5 hover:border-stroke",
                       ].join(" ")
                     }
                   >

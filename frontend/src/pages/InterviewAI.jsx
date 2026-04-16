@@ -84,9 +84,9 @@ const InterviewAI = () => {
                             <Terminal className="text-primary w-10 h-10" />
                         </div>
                         <div className="w-full max-w-md">
-                            <label className="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-tight">Select Job Role</label>
+                            <label className="block text-sm font-bold text-gray-600 mb-2 uppercase tracking-tight">Select Job Role</label>
                             <select
-                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-primary transition-all text-white"
+                                className="w-full bg-black/ border border-black/ rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-primary transition-all text-ink"
                                 value={role}
                                 onChange={(e) => setRole(e.target.value)}
                             >
@@ -114,7 +114,7 @@ const InterviewAI = () => {
                         className="glass h-[600px] flex flex-col overflow-hidden border-primary/10"
                     >
                         {/* Chat Header */}
-                        <div className="p-4 border-b border-white/5 flex justify-between items-center bg-white/5">
+                        <div className="p-4 border-b border-black/ flex justify-between items-center bg-black/">
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                                     <Bot className="w-5 h-5" />
@@ -128,7 +128,7 @@ const InterviewAI = () => {
                             </div>
                             <button
                                 onClick={() => setChatMode(false)}
-                                className="p-2 hover:bg-white/5 rounded-lg transition-colors text-gray-400 hover:text-white"
+                                className="p-2 hover:bg-black/ rounded-lg transition-colors text-gray-600 hover:text-ink"
                             >
                                 <RefreshCw className="w-4 h-4" />
                             </button>
@@ -154,14 +154,14 @@ const InterviewAI = () => {
                                         </div>
                                     )}
                                     <div className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${msg.role === 'bot'
-                                            ? 'bg-white/5 border border-white/10 rounded-tl-none text-gray-200'
-                                            : 'bg-primary text-white rounded-tr-none shadow-lg shadow-primary/10 font-medium'
+                                            ? 'bg-black/ border border-black/ rounded-tl-none text-gray-600'
+                                            : 'bg-primary -white rounded-tr-none shadow-lg shadow-primary/10 font-medium'
                                         }`}>
                                         {msg.text}
                                     </div>
                                     {msg.role === 'user' && (
-                                        <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0 mt-1">
-                                            <User className="w-4 h-4 text-gray-400" />
+                                        <div className="w-8 h-8 rounded-lg bg-black/ flex items-center justify-center shrink-0 mt-1">
+                                            <User className="w-4 h-4 text-gray-600" />
                                         </div>
                                     )}
                                 </motion.div>
@@ -175,11 +175,11 @@ const InterviewAI = () => {
                         </div>
 
                         {/* Input Area */}
-                        <div className="p-4 bg-black/20 border-t border-white/5">
+                        <div className="p-4 bg-black/20 border-t border-black/">
                             <div className="relative">
                                 <input
                                     type="text"
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-5 pr-14 outline-none focus:ring-1 focus:ring-primary transition-all text-sm"
+                                    className="w-full bg-black/ border border-black/ rounded-xl py-4 pl-5 pr-14 outline-none focus:ring-1 focus:ring-primary transition-all text-sm"
                                     placeholder="Type your response here..."
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}

@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto flex justify-between items-center glass px-6 py-3">
                 <Link to="/" className="flex items-center gap-2 group">
                     <ShieldCheck className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" />
-                    <span className="text-xl font-extrabold tracking-tight text-ink">SafeJob <span className="text-primary">AI</span></span>
+                    <span className="text-xl font-extrabold tracking-tight text-ink">AI Job Safety <span className="text-primary">Checker</span></span>
                 </Link>
 
                 {/* Desktop Menu */}
@@ -36,7 +36,7 @@ const Navbar = () => {
                     ))}
                     <Link
                         to="/detect"
-                        className="bg-primary hover:bg-accent text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/15 hover:scale-105 active:scale-95"
+                        className="bg-primary text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/15 hover:scale-105 active:scale-95"
                     >
                         Start Free Check
                     </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
                         <Link
                             to="/detect"
                             onClick={() => setIsOpen(false)}
-                            className="flex-1 text-center bg-primary hover:bg-accent text-white px-5 py-3 rounded-xl text-sm font-extrabold transition-all"
+                            className="flex-1 text-center bg-primary text-white px-5 py-3 rounded-xl text-sm font-extrabold transition-all"
                         >
                             Start Free Check
                         </Link>

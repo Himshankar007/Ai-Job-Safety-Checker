@@ -42,13 +42,13 @@ const CompanyAnalysis = () => {
                 <div className="relative group">
                     <input
                         type="text"
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 px-14 text-lg focus:ring-2 focus:ring-primary outline-none transition-all shadow-2xl"
+                        className="w-full bg-black/ border border-black/ rounded-2xl py-5 px-14 text-lg focus:ring-2 focus:ring-primary outline-none transition-all shadow-2xl"
                         placeholder="Search company name (e.g. Google, Amazon, Meta)..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
                     />
-                    <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors" />
+                    <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-600 group-focus-within:text-primary transition-colors" />
                     <button
                         onClick={handleSearch}
                         className="absolute right-3 top-1/2 -translate-y-1/2 px-6 py-2 bg-primary rounded-xl font-bold hover:bg-secondary transition-all"
@@ -66,7 +66,7 @@ const CompanyAnalysis = () => {
                         className="flex flex-col items-center justify-center gap-6 py-20"
                     >
                         <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
-                        <p className="text-gray-400 font-medium">Fetching reputation data and reviews...</p>
+                        <p className="text-gray-600 font-medium">Fetching reputation data and reviews...</p>
                     </motion.div>
                 )}
 
@@ -97,7 +97,7 @@ const CompanyAnalysis = () => {
                                     <div className="flex items-center gap-4 text-sm">
                                         <span className="flex items-center gap-1 text-yellow-400"><Star className="w-4 h-4 fill-current" /> {company.culture_rating} Rating</span>
                                         <span className="text-gray-500">|</span>
-                                        <span className="text-gray-300">HQ: San Francisco, CA</span>
+                                        <span className="text-gray-600">HQ: San Francisco, CA</span>
                                     </div>
                                 </div>
                                 <motion.div
@@ -114,16 +114,16 @@ const CompanyAnalysis = () => {
                                 <h3 className="font-bold text-xl mb-4 flex items-center gap-2">
                                     <Users className="text-primary w-5 h-5" /> Overall Summary
                                 </h3>
-                                <p className="text-gray-300 leading-relaxed">{company.summary}</p>
+                                <p className="text-gray-600 leading-relaxed">{company.summary}</p>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="glass p-6 border-l-4 border-primary">
-                                    <h4 className="text-sm font-bold text-gray-400 mb-2 uppercase">Salary Insight</h4>
+                                    <h4 className="text-sm font-bold text-gray-600 mb-2 uppercase">Salary Insight</h4>
                                     <p className="text-xl font-bold">{company.salary_insight}</p>
                                 </div>
                                 <div className="glass p-6 border-l-4 border-secondary">
-                                    <h4 className="text-sm font-bold text-gray-400 mb-2 uppercase">Emp. Retention</h4>
+                                    <h4 className="text-sm font-bold text-gray-600 mb-2 uppercase">Emp. Retention</h4>
                                     <p className="text-xl font-bold">88% (High)</p>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@ const CompanyAnalysis = () => {
                                         <motion.div
                                             key={i}
                                             whileHover={{ x: 5 }}
-                                            className="bg-white/5 p-4 rounded-xl border border-white/5"
+                                            className="bg-black/ p-4 rounded-xl border border-black/"
                                         >
                                             <div className="flex justify-between items-center mb-2">
                                                 <span className="font-bold text-sm text-primary">{rev.user}</span>
@@ -147,7 +147,7 @@ const CompanyAnalysis = () => {
                                                     ))}
                                                 </div>
                                             </div>
-                                            <p className="text-sm text-gray-400 italic">"{rev.text}"</p>
+                                            <p className="text-sm text-gray-600 italic">"{rev.text}"</p>
                                         </motion.div>
                                     ))}
                                 </div>
@@ -157,10 +157,10 @@ const CompanyAnalysis = () => {
                         {/* Score Side Card */}
                         <div className="flex flex-col gap-6">
                             <div className="glass p-8 text-center bg-gradient-to-br from-primary/20 to-transparent">
-                                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Credibility Score</h3>
+                                <h3 className="text-sm font-bold text-gray-600 uppercase tracking-widest mb-6">Credibility Score</h3>
                                 <div className="relative w-40 h-40 mx-auto mb-6">
                                     <svg className="w-full h-full" viewBox="0 0 100 100">
-                                        <circle className="text-white/10" strokeWidth="8" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50" />
+                                        <circle className="text-ink/10" strokeWidth="8" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50" />
                                         <motion.circle
                                             className="text-primary"
                                             strokeWidth="8"

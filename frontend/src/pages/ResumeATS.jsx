@@ -52,7 +52,7 @@ const ResumeATS = () => {
                             <Target className="text-primary w-5 h-5" /> Job Description
                         </h3>
                         <textarea
-                            className="w-full h-48 bg-black/20 border border-white/10 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all"
+                            className="w-full h-48 bg-black/20 border border-black/ rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all"
                             placeholder="Paste the target job description here..."
                             value={jobDesc}
                             onChange={(e) => setJobDesc(e.target.value)}
@@ -63,7 +63,7 @@ const ResumeATS = () => {
                         <h3 className="font-bold mb-4 flex items-center gap-2">
                             <FileUp className="text-primary w-5 h-5" /> Your Resume
                         </h3>
-                        <div className="border-2 border-dashed border-white/10 rounded-xl p-10 flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors cursor-pointer relative">
+                        <div className="border-2 border-dashed border-black/ rounded-xl p-10 flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors cursor-pointer relative">
                             <FileUp className="w-12 h-12 text-gray-500" />
                             <div className="text-center">
                                 <p className="font-medium">Upload PDF or Doc</p>
@@ -97,7 +97,7 @@ const ResumeATS = () => {
                             <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass p-10 flex flex-col items-center justify-center text-center h-full">
                                 <Target className="w-16 h-16 text-gray-600 mb-4" />
                                 <h3 className="font-bold text-xl mb-2">Ready to Scan</h3>
-                                <p className="text-gray-400 text-sm italic">"A tailored resume is 3x more likely to clear the ATS bottleneck."</p>
+                                <p className="text-gray-600 text-sm italic">"A tailored resume is 3x more likely to clear the ATS bottleneck."</p>
                             </motion.div>
                         )}
 
@@ -109,7 +109,7 @@ const ResumeATS = () => {
                                 </div>
                                 <div className="text-center">
                                     <h3 className="font-bold text-xl mb-2">Analyzing Semantics</h3>
-                                    <p className="text-gray-400 text-sm">Cross-referencing resume keywords with job requirements...</p>
+                                    <p className="text-gray-600 text-sm">Cross-referencing resume keywords with job requirements...</p>
                                 </div>
                             </motion.div>
                         )}
@@ -118,9 +118,9 @@ const ResumeATS = () => {
                             <motion.div key="result" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col gap-6">
                                 <div className="glass p-8 text-center relative overflow-hidden">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-                                    <h3 className="text-sm uppercase tracking-widest text-gray-400 font-bold mb-2">Compatibility Score</h3>
+                                    <h3 className="text-sm uppercase tracking-widest text-gray-600 font-bold mb-2">Compatibility Score</h3>
                                     <div className="text-7xl font-black gradient-text mb-4">{result.score}%</div>
-                                    <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 text-sm font-medium">
+                                    <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-black/ text-sm font-medium">
                                         {result.score >= 80 ? 'Excellent Match' : result.score >= 60 ? 'Good Potential' : 'Needs Optimization'}
                                     </div>
                                 </div>
@@ -154,7 +154,7 @@ const ResumeATS = () => {
                                     </h4>
                                     <ul className="space-y-3">
                                         {result.suggestions.map((s, i) => (
-                                            <li key={i} className="text-sm text-gray-300 flex items-start gap-3">
+                                            <li key={i} className="text-sm text-gray-600 flex items-start gap-3">
                                                 <ArrowRight className="w-4 h-4 text-primary mt-0.5" />
                                                 {s}
                                             </li>

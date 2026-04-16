@@ -49,10 +49,10 @@ const Home = () => {
                     </p>
                 </div>
                 <div className="flex gap-3">
-                    <Link to="/detect" className="px-5 py-3 rounded-2xl bg-primary text-white font-extrabold shadow-lg shadow-primary/20 hover:opacity-95 transition">
+                    <Link to="/detect" className="px-5 py-3 rounded-2xl bg-primary -white font-extrabold shadow-lg shadow-primary/20 hover:opacity-95 transition">
                         New Job Check
                     </Link>
-                    <Link to="/ats" className="px-5 py-3 rounded-2xl bg-white/5 border border-stroke text-ink font-extrabold hover:bg-white/10 transition">
+                    <Link to="/ats" className="px-5 py-3 rounded-2xl bg-black/5 border border-stroke text-ink font-extrabold hover:bg-black/10 transition">
                         Resume ATS
                     </Link>
                 </div>
@@ -75,7 +75,7 @@ const Home = () => {
                                 <div className="text-lg font-black">Quick Start</div>
                                 <div className="text-sm text-muted">Pick a tool and get results in minutes.</div>
                             </div>
-                            <div className="text-xs uppercase tracking-[0.2em] text-muted font-semibold">SafeJob AI</div>
+                            <div className="text-xs uppercase tracking-[0.2em] text-muted font-semibold">AI Job Safety Checker</div>
                         </div>
                         <div className="p-6 grid md:grid-cols-2 gap-4">
                             <ToolCard
@@ -121,7 +121,7 @@ const Home = () => {
                                     { t: "Resume ATS", d: "Matched resume to JD", when: "1 hour ago", tag: "72% match", color: "text-accent" },
                                     { t: "Company Analysis", d: "Checked company credibility", when: "4 hours ago", tag: "Recommended", color: "text-primary" },
                                 ].map((row, i) => (
-                                    <div key={i} className="flex items-center justify-between gap-4 bg-white/5 border border-stroke rounded-2xl p-4">
+                                    <div key={i} className="flex items-center justify-between gap-4 bg-black/5 border border-stroke rounded-2xl p-4">
                                         <div>
                                             <div className="font-extrabold">{row.t}</div>
                                             <div className="text-sm text-muted">{row.d}</div>
@@ -147,7 +147,7 @@ const Home = () => {
                             <p className="text-sm text-muted leading-relaxed">
                                 Pick a role and start a mock interview. If your backend maintenance mode is enabled, you may see a maintenance notice.
                             </p>
-                            <Link to="/interview" className="mt-4 inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-secondary text-white font-extrabold hover:opacity-95 transition">
+                            <Link to="/interview" className="mt-4 inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-secondary -white font-extrabold hover:opacity-95 transition">
                                 Start Interview
                             </Link>
                         </div>
@@ -175,7 +175,7 @@ const Home = () => {
                     </div>
 
                     <div className="text-center text-[11px] uppercase tracking-[0.22em] text-muted">
-                        © 2026 SafeJob AI
+                        © 2026 AI Job Safety Checker
                     </div>
                 </div>
             </div>

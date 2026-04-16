@@ -1,15 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark;
-  color: #e5e7eb;
-  background-color: #0f1015;
+  color-scheme: light;
+  color: #1a1a1a;
+  background-color: #faf7f2;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,8 +20,9 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #0f1015;
-  background-image: url("/corona-bg.svg");
+  background-color: #faf7f2;
+  /* Abstract subtle gradient background */
+  background-image: radial-gradient(at 0% 0%, hsla(38,100%,74%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(199,100%,81%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(150,100%,74%,1) 0, transparent 50%);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -30,22 +30,22 @@ body {
 }
 
 .glass {
-  background: rgba(25, 28, 36, 0.86);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 16px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #b66dff, #ff2c6d);
+  background: linear-gradient(to right, #d97706, #0284c7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 ::selection {
-  background: rgba(182, 109, 255, 0.35);
+  background: rgba(217, 119, 6, 0.2);
 }
 
 /* Dashboard helpers */

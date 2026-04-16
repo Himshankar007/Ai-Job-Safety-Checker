@@ -7,16 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Corona-style dark admin palette
-        background: "#0f1015",
-        surface: "#191c24",
-        card: "#1e222d",
-        stroke: "rgba(255,255,255,0.08)",
-        ink: "#e5e7eb",
-        muted: "#9ca3af",
-        primary: "#b66dff",
-        secondary: "#ff2c6d",
-        accent: "#00d25b",
+        // Sand and White light palette
+        background: "#faf7f2",
+        surface: "#ffffff",
+        card: "#ffffff",
+        stroke: "rgba(0,0,0,0.08)",
+        ink: "#1a1a1a",
+        muted: "#6b7280",
+        primary: "#d97706", // amber/sand vibrant
+        secondary: "#0284c7", // sky blue
+        accent: "#059669", // emerald green
       },
       backdropBlur: {
         xs: '2px',

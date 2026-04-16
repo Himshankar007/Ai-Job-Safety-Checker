@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
                     <Link to="/" className="flex items-center gap-2">
                         <ShieldCheck className="w-6 h-6 text-primary" />
-                        <span className="text-xl font-extrabold tracking-tight text-ink">SafeJob <span className="text-primary">AI</span></span>
+                        <span className="text-xl font-extrabold tracking-tight text-ink">AI Job Safety <span className="text-primary">Checker</span></span>
                     </Link>
                     <p className="text-muted text-sm leading-relaxed">
                         Protecting job seekers through advanced AI analytics. Detect fraud, optimize resumes, and master interviews in one secure platform.
@@ -51,14 +51,14 @@ const Footer = () => {
                             placeholder="Email address"
                             className="bg-white/70 border border-primary/15 rounded-lg px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-secondary w-full"
                         />
-                        <button className="p-2 bg-primary rounded-lg hover:bg-accent transition-all text-white">
+                        <button className="p-2 rounded bg-primary text-white">
                             <Mail className="w-5 h-5" />
                         </button>
                     </div>
                 </div>
             </div>
             <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-primary/10 text-center text-[10px] text-muted uppercase tracking-widest">
-                © 2026 SafeJob AI. Built for job safety and career growth.
+                © 2026 AI Job Safety Checker. Built for job safety and career growth.
             </div>
             </div>
         </footer>

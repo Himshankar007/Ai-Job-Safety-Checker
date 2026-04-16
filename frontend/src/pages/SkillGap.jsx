@@ -52,13 +52,13 @@ const SkillGap = () => {
             <div className="grid lg:grid-cols-2 gap-10">
                 <div className="flex flex-col gap-6">
                     <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="glass p-8">
-                        <h3 className="font-bold mb-6 flex items-center gap-2 italic text-gray-300 uppercase tracking-widest text-sm">
+                        <h3 className="font-bold mb-6 flex items-center gap-2 italic text-gray-600 uppercase tracking-widest text-sm">
                             <Zap className="text-yellow-400 w-4 h-4" /> Step 1: Your Skill Set
                         </h3>
                         <div className="flex gap-2 mb-6">
                             <input
                                 type="text"
-                                className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 outline-none focus:ring-1 focus:ring-primary transition-all"
+                                className="flex-1 bg-black/ border border-black/ rounded-xl px-4 py-2 outline-none focus:ring-1 focus:ring-primary transition-all"
                                 placeholder="E.g. React, Python, UI Design..."
                                 value={newSkill}
                                 onChange={(e) => setNewSkill(e.target.value)}
@@ -70,7 +70,7 @@ const SkillGap = () => {
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {userSkills.map(skill => (
-                                <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold flex items-center gap-2 group">
+                                <span key={skill} className="px-3 py-1 bg-black/ border border-black/ rounded-full text-xs font-bold flex items-center gap-2 group">
                                     {skill}
                                     <button onClick={() => removeSkill(skill)} className="text-gray-500 hover:text-red-400">
                                         <Trash2 className="w-3 h-3" />
@@ -82,11 +82,11 @@ const SkillGap = () => {
                     </motion.div>
 
                     <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="glass p-8">
-                        <h3 className="font-bold mb-6 flex items-center gap-2 italic text-gray-300 uppercase tracking-widest text-sm">
+                        <h3 className="font-bold mb-6 flex items-center gap-2 italic text-gray-600 uppercase tracking-widest text-sm">
                             <BookOpen className="text-primary w-4 h-4" /> Step 2: Target Job Details
                         </h3>
                         <textarea
-                            className="w-full h-40 bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:ring-1 focus:ring-primary transition-all text-sm"
+                            className="w-full h-40 bg-black/ border border-black/ rounded-xl p-4 outline-none focus:ring-1 focus:ring-primary transition-all text-sm"
                             placeholder="Paste the job description or requirements here..."
                             value={jobDesc}
                             onChange={(e) => setJobDesc(e.target.value)}
@@ -112,7 +112,7 @@ const SkillGap = () => {
                     <AnimatePresence mode="wait">
                         {!result && !loading && (
                             <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass p-8 h-full flex flex-col items-center justify-center text-center">
-                                <div className="w-20 h-20 rounded-3xl bg-white/5 flex items-center justify-center mb-6">
+                                <div className="w-20 h-20 rounded-3xl bg-black/ flex items-center justify-center mb-6">
                                     <Brain className="w-10 h-10 text-gray-600" />
                                 </div>
                                 <h3 className="text-xl font-bold mb-2">Analysis Engine Ready</h3>
@@ -129,7 +129,7 @@ const SkillGap = () => {
                                     </div>
                                     <div className="w-24 h-24 relative">
                                         <svg className="w-full h-full" viewBox="0 0 36 36">
-                                            <path className="text-white/5" strokeDasharray="100, 100" strokeWidth="3" fill="none" stroke="currentColor" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                            <path className="text-ink/5" strokeDasharray="100, 100" strokeWidth="3" fill="none" stroke="currentColor" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                             <motion.path
                                                 className="text-primary"
                                                 strokeDasharray={`${result.match_percentage}, 100`}
@@ -163,13 +163,13 @@ const SkillGap = () => {
                                         <motion.div key={i} whileHover={{ scale: 1.02 }} className="glass p-6 border-l-4 border-primary">
                                             <div className="flex justify-between items-start mb-4">
                                                 <h5 className="font-black text-xl">{rec.skill}</h5>
-                                                <span className="text-[10px] font-bold bg-primary px-2 py-0.5 rounded text-white uppercase">Critical</span>
+                                                <span className="text-[10px] font-bold bg-primary -white uppercase">Critical</span>
                                             </div>
                                             <div className="space-y-3">
                                                 {rec.courses.map((course, j) => (
                                                     <div key={j} className="flex items-center justify-between group cursor-pointer">
                                                         <div>
-                                                            <p className="text-sm font-bold text-gray-200 group-hover:text-primary transition-colors">{course.name}</p>
+                                                            <p className="text-sm font-bold text-gray-600 group-hover:text-primary transition-colors">{course.name}</p>
                                                             <p className="text-[10px] text-gray-500">{course.platform}</p>
                                                         </div>
                                                         <ArrowRight className="w-4 h-4 text-gray-700 group-hover:text-primary group-hover:translate-x-1 transition-all" />
